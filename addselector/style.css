@@ -1,0 +1,46 @@
+p{
+    color:coral;
+    font-size:15px;
+}
+div p{
+    color:green;
+    font-size:35px; 
+}
+ /*parent childern*/
+ul li{
+    color:purple;
+    font-size:18px;
+    list-style-type:square;
+}
+ol li{
+    color:navy;
+    font-size:22px;
+    list-style-type:decimal;
+}
+/* sibling selector */
+#favcity + li{
+    color:teal;
+    font-size:20px;
+}
+/*general sibling*/
+#favcity ~ li{
+    color:olive;
+    font-size:20px;
+}
+/* pseudo-class selector */
+a:link{
+    color:blue;
+    text-decoration:none;
+}
+a:visited{
+    color:purple;
+    text-decoration:none;
+}
+a:hover{
+    color:orange;
+    text-decoration:underline;
+}
+a:active{
+    color:red;
+    text-decoration:underline;
+}
