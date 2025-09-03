@@ -1,0 +1,43 @@
+/*p{
+    border:10px solid blue;
+    padding:5px;
+    margin:5px;
+    box-sizing:border-box;
+    margin-top: 10px;
+    margin-bottom:10px;
+    margin-left:10px;
+    margin-right:10px;
+    position:relative;
+    top:10px;
+    left:5;
+    right:10px;
+    bottom:10px;
+    background-color:lightgray;
+    text-align:center;
+    font-family:Arial, sans-serif;
+    font-weight:bold;
+    line-height:1.5;    
+}*/
+#para{
+    border:5px solid rgb(14, 139, 56);
+    padding:10px;
+    margin:10px;
+    box-sizing:border-box;
+    position:absolute;
+    top:25px;
+    left:10px;
+    right:5px;
+    position:relative;
+    bottom:15px;
+    background-color:lightblue;
+    text-align:center;
+    font-family:Arial, sans-serif;
+    font-weight:bold;
+    line-height:1.5;
+    width:300px;
+    height:200px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}

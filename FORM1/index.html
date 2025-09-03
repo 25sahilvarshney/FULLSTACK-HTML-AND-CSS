@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #d8f5d3;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      background-color: #b8f0b0;
+      border: 1px solid red;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: black;
+    }
+    fieldset {
+      border: 1px solid #444;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #c8f6c0;
+    }
+    legend {
+      font-weight: bold;
+    }
+    label {
+      display: inline-block;
+      width: 120px;
+      margin: 5px 0;
+    }
+    input[type="text"], 
+    input[type="number"], 
+    textarea {
+      padding: 5px;
+      width: 200px;
+    }
+    textarea {
+      width: 400px;
+      height: 70px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid #444;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    .experience {
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Job Application Form</h1>
+
+    <!-- Personal Details -->
+    <fieldset>
+      <legend>Personal Details</legend>
+      <label>First Name :</label>
+      <input type="text" placeholder="Enter First Name">
+      <label>Middle Name :</label>
+      <input type="text" placeholder="Enter Middle Name">
+      <label>Last Name :</label>
+      <input type="text" placeholder="Enter Last Name">
+      <br><br>
+      <label>Gender :</label>
+      <input type="radio" name="gender" id="male">
+      <label for="male">Male</label>
+      <input type="radio" name="gender" id="female">
+      <label for="female">Female</label>
+      <br><br>
+      <label>Phone No :</label>
+      <input type="text" placeholder="Enter Mobile No.">
+      <br><br>
+      <label>Address :</label><br>
+      <textarea placeholder="Enter Address"></textarea>
+    </fieldset>
+
+    <!-- Education Details -->
+    <fieldset>
+      <legend>Education Details</legend>
+      <table>
+        <tr>
+          <th>Class</th>
+          <th>Board/University</th>
+          <th>Passing Year</th>
+          <th>Division</th>
+        </tr>
+        <tr>
+          <td>10th</td>
+          <td><input type="text" placeholder="Enter Board/University"></td>
+          <td><input type="text" placeholder="Enter Passing Year"></td>
+          <td><input type="text" placeholder="Enter Division"></td>
+        </tr>
+        <tr>
+          <td>12th</td>
+          <td><input type="text" placeholder="Enter Board/University"></td>
+          <td><input type="text" placeholder="Enter Passing Year"></td>
+          <td><input type="text" placeholder="Enter Division"></td>
+        </tr>
+        <tr>
+          <td>Graduation</td>
+          <td><input type="text" placeholder="Enter Board/University"></td>
+          <td><input type="text" placeholder="Enter Passing Year"></td>
+          <td><input type="text" placeholder="Enter Division"></td>
+        </tr>
+        <tr>
+          <td>Others</td>
+          <td><input type="text" placeholder="Enter Board/University"></td>
+          <td><input type="text" placeholder="Enter Passing Year"></td>
+          <td><input type="text" placeholder="Enter Division"></td>
+        </tr>
+      </table>
+    </fieldset>
+
+    <!-- Experience -->
+    <p class="experience">Experience (in Months): <b>96 months experience of teaching field</b></p>
+    <button>
+        submit
+    </button>
+  </div>
+</body>
+</html>

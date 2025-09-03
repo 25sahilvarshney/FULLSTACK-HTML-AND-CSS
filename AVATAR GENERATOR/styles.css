@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #a0e9ff, #58c8e0);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  color: #00334d;
+}
+
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+#nameInput {
+  padding: 10px;
+  font-size: 16px;
+  width: 220px;
+  border-radius: 6px;
+  border: 1px solid #007a99;
+  outline: none;
+}
+
+#generateBtn, #clearBtn {
+  padding: 10px 16px;
+  margin-left: 8px;
+  font-size: 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #007a99;
+  color: white;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+#generateBtn:hover, #clearBtn:hover {
+  background-color: #005a75;
+}
+
+.avatar-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px dashed #007a99;
+  min-height: 250px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  background-color: #009ec3;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.avatar span {
+  position: absolute;
+  bottom: -20px;
+  font-size: 13px;
+  color: #00334d;
+}
+
+.avatar.empty {
+  background-color: transparent;
+  box-shadow: none;
+  border: 2px dashed #007a99;
+  cursor: default;
+}

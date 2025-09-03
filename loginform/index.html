@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Signup</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #43cea2, #185a9d);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background: white;
+      width: 90%;
+      max-width: 400px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .tab {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .tab button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      background: #ddd;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    .tab button.active {
+      background: #43cea2;
+      color: white;
+    }
+    form {
+      display: none;
+    }
+    form.active {
+      display: block;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button.submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: #185a9d;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button.submit-btn:hover {
+      background: #104070;
+    }
+    .link {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .link a {
+      color: #185a9d;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Toggle Buttons -->
+    <div class="tab">
+      <button id="loginBtn" class="active">Login</button>
+      <button id="signupBtn">Signup</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" class="active">
+      <h2>Login</h2>
+      <input type="email" placeholder="Enter Email" required>
+      <input type="password" placeholder="Enter Password" required>
+      <button type="submit" class="submit-btn">Login</button>
+      <div class="link">
+        <p>Don’t have an account? <a href="#" id="switchToSignup">Sign Up</a></p>
+      </div>
+    </form>
+
+    <!-- Signup Form -->
+    <form id="signupForm">
+      <h2>Signup</h2>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Enter Email" required>
+      <input type="password" placeholder="Enter Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+      <button type="submit" class="submit-btn">Signup</button>
+      <div class="link">
+        <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const loginBtn = document.getElementById("loginBtn");
+    const signupBtn = document.getElementById("signupBtn");
+    const loginForm = document.getElementById("loginForm");
+    const signupForm = document.getElementById("signupForm");
+    const switchToSignup = document.getElementById("switchToSignup");
+    const switchToLogin = document.getElementById("switchToLogin");
+
+    // Switch to Login
+    loginBtn.addEventListener("click", () => {
+      loginBtn.classList.add("active");
+      signupBtn.classList.remove("active");
+      loginForm.classList.add("active");
+      signupForm.classList.remove("active");
+    });
+
+    // Switch to Signup
+    signupBtn.addEventListener("click", () => {
+      signupBtn.classList.add("active");
+      loginBtn.classList.remove("active");
+      signupForm.classList.add("active");
+      loginForm.classList.remove("active");
+    });
+
+    // Links for switching
+    switchToSignup.addEventListener("click", (e) => {
+      e.preventDefault();
+      signupBtn.click();
+    });
+
+    switchToLogin.addEventListener("click", (e) => {
+      e.preventDefault();
+      loginBtn.click();
+    });
+  </script>
+</body>
+</html>

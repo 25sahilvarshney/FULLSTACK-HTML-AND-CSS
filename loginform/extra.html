@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Signup</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      width: 400px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.3);
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-box {
+      display: none;
+    }
+
+    .form-box.active {
+      display: block;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #aaa;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #6c63ff;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #5548d6;
+      transform: scale(1.05);
+    }
+
+    .toggle {
+      text-align: center;
+      margin-top: 15px;
+      color: #555;
+      cursor: pointer;
+    }
+
+    .message {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Login Form -->
+    <div id="loginForm" class="form-box active">
+      <h2>Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button onclick="login()">Login</button>
+      <div class="toggle" onclick="showSignup()">Don't have an account? Sign Up</div>
+      <div class="message" id="loginMsg"></div>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signupForm" class="form-box">
+      <h2>Sign Up</h2>
+      <input type="text" id="signupName" placeholder="Username" required>
+      <input type="email" id="signupEmail" placeholder="Email" required>
+      <input type="password" id="signupPassword" placeholder="Password" required>
+      <button onclick="signup()">Sign Up</button>
+      <div class="toggle" onclick="showLogin()">Already have an account? Login</div>
+      <div class="message" id="signupMsg"></div>
+    </div>
+  </div>
+
+  <script>
+    function showSignup() {
+      document.getElementById("loginForm").classList.remove("active");
+      document.getElementById("signupForm").classList.add("active");
+    }
+
+    function showLogin() {
+      document.getElementById("signupForm").classList.remove("active");
+      document.getElementById("loginForm").classList.add("active");
+    }
+
+    function signup() {
+      const name = document.getElementById("signupName").value;
+      const email = document.getElementById("signupEmail").value;
+      const password = document.getElementById("signupPassword").value;
+
+      if (name && email && password) {
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userPassword", password);
+
+        document.getElementById("signupMsg").style.color = "green";
+        document.getElementById("signupMsg").innerText = "Account created successfully!";
+        setTimeout(() => {
+          showLogin();
+        }, 1500);
+      } else {
+        document.getElementById("signupMsg").style.color = "red";
+        document.getElementById("signupMsg").innerText = "Please fill all fields!";
+      }
+    }
+
+    function login() {
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+
+      const savedEmail = localStorage.getItem("userEmail");
+      const savedPassword = localStorage.getItem("userPassword");
+
+      if (email === savedEmail && password === savedPassword) {
+        document.getElementById("loginMsg").style.color = "green";
+        document.getElementById("loginMsg").innerText = "Login Successfully!";
+      } else {
+        document.getElementById("loginMsg").style.color = "red";
+        document.getElementById("loginMsg").innerText = "Invalid Credentials!";
+      }
+    }
+  </script>
+</body>
+</html>

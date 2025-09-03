@@ -1,0 +1,20 @@
+{
+  "name": "pokemon-api-website",
+  "version": "1.0.0",
+  "description": "A simple website to fetch and display Pokémon details using a fake API.",
+  "main": "src/scripts/app.js",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "keywords": [
+    "pokemon",
+    "api",
+    "website"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
